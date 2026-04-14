@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-matcha-50: #f4f7f0;
+  --color-matcha-100: #e5ecd9;
+  --color-matcha-200: #d0debc;
+  --color-matcha-300: #b3c995;
+  --color-matcha-400: #93b06c;
+  --color-matcha-500: #7a974f;
+  --color-matcha-600: #5f783a;
+  --color-matcha-700: #4a5e2f;
+  --color-matcha-800: #3e4d29;
+  --color-matcha-900: #354024;
+
+  --color-coffee-50: #fdf8f6;
+  --color-coffee-100: #f8ede8;
+  --color-coffee-200: #f0dcd2;
+  --color-coffee-300: #e4c3b3;
+  --color-coffee-400: #d3a28c;
+  --color-coffee-500: #c4866c;
+  --color-coffee-600: #b56c52;
+  --color-coffee-700: #97553f;
+  --color-coffee-800: #7b4635;
+  --color-coffee-900: #653b2e;
+  --color-coffee-950: #351c15;
+
+  --color-sand-50: #fdfdfc;
+  --color-sand-100: #f9f9f8;
+  --color-sand-200: #f1f0eb;
+  --color-sand-300: #e3e1d7;
+  --color-sand-400: #d1cebe;
+  --color-sand-500: #bfbba3;
+  --color-sand-600: #a9a488;
+  --color-sand-700: #8c876e;
+  --color-sand-800: #726e5b;
+  --color-sand-900: #5e5b4c;
+}
+
+body {
+  background-color: var(--color-sand-100);
+  color: var(--color-coffee-950);
+}
