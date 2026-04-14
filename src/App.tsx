@@ -77,8 +77,8 @@ export default function App() {
         
         <div className="max-w-4xl mx-auto text-center">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-matcha-100 text-matcha-800 font-medium text-sm mb-6"
           >
@@ -87,8 +87,8 @@ export default function App() {
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-4xl md:text-6xl lg:text-7xl text-coffee-950 leading-tight mb-6"
           >
@@ -97,8 +97,8 @@ export default function App() {
           </motion.h1>
           
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-coffee-800 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
@@ -107,8 +107,8 @@ export default function App() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
@@ -267,8 +267,8 @@ export default function App() {
             ].map((testimonial, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ y: 20 }}
+                whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="bg-white p-8 rounded-3xl border border-sand-200 shadow-sm hover:shadow-md transition-shadow"
@@ -311,9 +311,9 @@ export default function App() {
                 {step === 1 && (
                   <motion.form 
                     key="step1"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
+                    initial={{ x: -20 }}
+                    animate={{ x: 0 }}
+                    exit={{ x: 20 }}
                     onSubmit={handleNextStep}
                     className="space-y-8"
                   >
@@ -388,9 +388,9 @@ export default function App() {
                 {step === 2 && (
                   <motion.form 
                     key="step2"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
+                    initial={{ x: -20 }}
+                    animate={{ x: 0 }}
+                    exit={{ x: 20 }}
                     onSubmit={handleNextStep}
                     className="space-y-6"
                   >
@@ -460,8 +460,8 @@ export default function App() {
                 {step === 3 && (
                   <motion.div 
                     key="step3"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ scale: 0.95 }}
+                    animate={{ scale: 1 }}
                     className="text-center py-8 space-y-6"
                   >
                     <div className="w-20 h-20 bg-matcha-100 rounded-full flex items-center justify-center mx-auto mb-6">
