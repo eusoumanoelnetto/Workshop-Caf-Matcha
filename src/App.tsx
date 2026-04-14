@@ -76,42 +76,22 @@ export default function App() {
         </div>
         
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-matcha-100 text-matcha-800 font-medium text-sm mb-6"
-          >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-matcha-100 text-matcha-800 font-medium text-sm mb-6">
             <Leaf className="w-4 h-4" />
             <span>Vagas Limitadas</span>
-          </motion.div>
+          </div>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-4xl md:text-6xl lg:text-7xl text-coffee-950 leading-tight mb-6"
-          >
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-coffee-950 leading-tight mb-6">
             Workshop <br className="hidden md:block" />
             <span className="text-matcha-600 italic">Café & Matcha</span>
-          </motion.h1>
+          </h1>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-coffee-800 max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
+          <p className="text-lg md:text-xl text-coffee-800 max-w-2xl mx-auto mb-10 leading-relaxed">
             Não perca nosso primeiro workshop com baristas especializados. 
             Aprenda a dominar a <span className="font-semibold text-coffee-900 underline decoration-matcha-400 decoration-2 underline-offset-4">Latte Art</span>, descubra os segredos do matcha e conecte-se com outros <span className="font-semibold text-coffee-900">Cafelovers</span>!
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#registration" className="inline-flex items-center justify-center gap-2 bg-coffee-900 text-sand-50 px-8 py-4 rounded-full font-medium text-lg hover:bg-coffee-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto">
               Quero minha vaga agora
               <ChevronRight className="w-5 h-5" />
@@ -130,7 +110,7 @@ export default function App() {
               </div>
               <span className="ml-4 text-sm text-coffee-600 font-medium self-center">Cafelovers inscritos</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -265,12 +245,8 @@ export default function App() {
                 role: "Frequentadora Oasis"
               }
             ].map((testimonial, i) => (
-              <motion.div 
+              <div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="bg-white p-8 rounded-3xl border border-sand-200 shadow-sm hover:shadow-md transition-shadow"
               >
                 <p className="text-coffee-700 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
@@ -281,7 +257,7 @@ export default function App() {
                     <p className="text-xs text-coffee-500">{testimonial.role}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
