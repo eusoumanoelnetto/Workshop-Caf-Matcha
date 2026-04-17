@@ -27,6 +27,7 @@ export default function App() {
     time: '',
     name: '',
     phone: '',
+    cpf: '',
     instagram: ''
   });
   const [copied, setCopied] = useState(false);
@@ -43,7 +44,7 @@ export default function App() {
     e.preventDefault();
     if (step === 1 && formData.date && formData.time) {
       setStep(2);
-    } else if (step === 2 && formData.name && formData.phone) {
+    } else if (step === 2 && formData.name && formData.phone && formData.cpf) {
       setStep(3);
     }
   };
@@ -51,6 +52,7 @@ export default function App() {
   const whatsappMessage = encodeURIComponent(
     `Olá! Fiz o pagamento do sinal (R$60) para o Workshop de Café & Matcha.\n\n` +
     `Nome: ${formData.name}\n` +
+    `CPF: ${formData.cpf}\n` +
     `Data escolhida: ${formData.date === '13' ? '13 de maio' : '16 de maio'}\n` +
     `Horário: ${formData.time === 'morning' ? 'Manhã (09:00 - 12:00)' : 'Tarde (13:00 - 16:00)'}\n\n` +
     `Segue o meu comprovante:`
@@ -102,8 +104,8 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-coffee-800 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Não perca nosso primeiro workshop com baristas especializados. 
-            Aprenda a dominar a <span className="font-semibold text-coffee-900 underline decoration-matcha-400 decoration-2 underline-offset-4">Latte Art</span>, descubra os segredos do matcha e conecte-se com outros <span className="font-semibold text-coffee-900">Cafelovers</span>!
+            Não perca nosso workshop com baristas especializados. 
+            Uma imersão completa para explorar o universo dos <span className="font-semibold text-coffee-900 underline decoration-matcha-400 decoration-2 underline-offset-4">métodos filtrados</span>, descobrir a verdadeira essência do matcha e conectar-se com outros <span className="font-semibold text-coffee-900">Cafelovers</span>!
           </motion.p>
 
           <motion.div
@@ -141,10 +143,32 @@ export default function App() {
             
             <div className="space-y-8">
               <div>
-                <h2 className="font-serif text-3xl md:text-4xl text-coffee-950 mb-4">Experiência Sensorial: Café & Matcha com Baristas</h2>
-                <p className="text-coffee-700 leading-relaxed text-lg">
-                  Para você que é <span className="font-semibold text-coffee-900">Cafelover</span> e busca viver uma experiência sensorial profunda. Durante 4 horas, você vai mergulhar neste universo com degustação guiada e técnicas profissionais.
-                </p>
+                <h2 className="font-serif text-3xl md:text-4xl text-coffee-950 mb-4">Workshop de Café Filtrado & Matcha 🍵☕️</h2>
+                <div className="text-coffee-700 leading-relaxed text-lg space-y-4">
+                  <p>
+                    Uma imersão de 4 horas para quem quer ir além do básico e explorar o universo dos métodos filtrados e do matcha com profundidade e sensibilidade.
+                  </p>
+                  <div>
+                    <span className="font-semibold text-coffee-900 block mb-2">Neste workshop, você vai aprender:</span>
+                    <ul className="space-y-2 text-base">
+                      {[
+                        "Fundamentos da extração no café filtrado",
+                        "Diferenças entre métodos e como escolher o ideal",
+                        "Técnicas para realçar sabor, aroma e equilíbrio",
+                        "Introdução ao matcha: origem, preparo tradicional e contemporâneo",
+                        "Como integrar o matcha em bebidas criativas"
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-matcha-500 font-bold mt-0.5">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p>
+                    Tudo isso com uma abordagem prática, acessível e focada em experiência — perfeito tanto para iniciantes quanto para quem já trabalha com café e quer se aprofundar. <strong className="text-coffee-900 font-medium">Vem viver esse momento com a gente!</strong>
+                  </p>
+                </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -251,7 +275,7 @@ export default function App() {
             {[
               {
                 name: "Mariana Silva",
-                text: "Uma experiência transformadora! Aprendi técnicas de Latte Art que nunca imaginei conseguir fazer em casa.",
+                text: "Uma experiência transformadora! Aprendi técnicas incríveis sobre extração e métodos filtrados.",
                 role: "Entusiasta de Café"
               },
               {
@@ -399,7 +423,9 @@ export default function App() {
                     
                     <div className="space-y-4">
                       <div className="space-y-2">
-                        <label className="block text-sm font-medium text-coffee-800">Nome Completo</label>
+                        <label className="block text-sm font-medium text-coffee-800">
+                          Nome Completo <span className="text-red-500">*</span>
+                        </label>
                         <input 
                           type="text" 
                           required
@@ -411,13 +437,29 @@ export default function App() {
                       </div>
                       
                       <div className="space-y-2">
-                        <label className="block text-sm font-medium text-coffee-800">WhatsApp</label>
+                        <label className="block text-sm font-medium text-coffee-800">
+                          WhatsApp <span className="text-red-500">*</span>
+                        </label>
                         <input 
                           type="tel" 
                           required
                           value={formData.phone}
                           onChange={e => setFormData({...formData, phone: e.target.value})}
                           placeholder="(21) 99999-9999"
+                          className="w-full px-4 py-3 rounded-xl border border-sand-300 bg-sand-50 focus:ring-2 focus:ring-matcha-500 focus:border-matcha-500 outline-none transition-all"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-coffee-800">
+                          CPF <span className="text-red-500">*</span>
+                        </label>
+                        <input 
+                          type="text" 
+                          required
+                          value={formData.cpf}
+                          onChange={e => setFormData({...formData, cpf: e.target.value})}
+                          placeholder="000.000.000-00"
                           className="w-full px-4 py-3 rounded-xl border border-sand-300 bg-sand-50 focus:ring-2 focus:ring-matcha-500 focus:border-matcha-500 outline-none transition-all"
                         />
                       </div>
@@ -437,6 +479,10 @@ export default function App() {
                           />
                         </div>
                       </div>
+
+                      <p className="text-[10px] text-sand-500 pt-2 italic">
+                        <span className="text-red-500 font-bold">*</span> Campos de preenchimento obrigatório para emissão do certificado e confirmação.
+                      </p>
                     </div>
 
                     <div className="pt-4 flex gap-4">
