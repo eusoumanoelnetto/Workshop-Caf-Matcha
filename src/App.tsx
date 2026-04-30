@@ -32,7 +32,7 @@ export default function App() {
   });
   const [copied, setCopied] = useState(false);
 
-  const pixKey = "12.345.678/0001-90"; // Placeholder CNPJ
+  const pixKey = "ce4be7b1-6a9b-4a4b-b9a2-4d2fd827e20b";
 
   const handleCopyPix = () => {
     navigator.clipboard.writeText(pixKey);
@@ -383,19 +383,25 @@ export default function App() {
                         <span className="text-xs text-coffee-600">⚠️ Atenção: Não fazemos devolução do valor do sinal em caso de desistência.</span>
                       </p>
 
-                      <div className="bg-white p-4 rounded-xl border border-sand-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                        <div className="flex-1 truncate">
-                          <p className="text-xs text-sand-500 uppercase tracking-wider font-semibold mb-1">Chave Pix (CNPJ)</p>
-                          <p className="font-mono text-coffee-900 font-medium truncate">{pixKey}</p>
+                      <div className="bg-white p-4 rounded-xl border border-sand-200 flex flex-col gap-4">
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                          <div className="flex-1 truncate w-full text-center sm:text-left">
+                            <p className="text-xs text-sand-500 uppercase tracking-wider font-semibold mb-1">Chave Pix (Aleatória)</p>
+                            <p className="font-mono text-coffee-900 font-medium truncate text-sm" title={pixKey}>{pixKey}</p>
+                          </div>
+                          <button 
+                            type="button"
+                            onClick={handleCopyPix}
+                            className="flex items-center justify-center gap-2 px-4 py-2 bg-sand-100 hover:bg-sand-200 text-coffee-900 rounded-lg font-medium transition-colors shrink-0 w-full sm:w-auto"
+                          >
+                            {copied ? <CheckCircle2 className="w-4 h-4 text-matcha-600" /> : <Copy className="w-4 h-4" />}
+                            {copied ? 'Copiado!' : 'Copiar Chave'}
+                          </button>
                         </div>
-                        <button 
-                          type="button"
-                          onClick={handleCopyPix}
-                          className="flex items-center gap-2 px-4 py-2 bg-sand-100 hover:bg-sand-200 text-coffee-900 rounded-lg font-medium transition-colors shrink-0"
-                        >
-                          {copied ? <CheckCircle2 className="w-4 h-4 text-matcha-600" /> : <Copy className="w-4 h-4" />}
-                          {copied ? 'Copiado!' : 'Copiar Chave'}
-                        </button>
+                        <div className="pt-3 border-t border-sand-100 flex flex-col sm:flex-row sm:justify-between text-sm text-coffee-700 gap-1 sm:gap-4 text-center sm:text-left">
+                          <div><span className="font-semibold text-coffee-900 text-xs uppercase tracking-wider">Recebedor:</span><br/>Ronald Guedes Pires</div>
+                          <div><span className="font-semibold text-coffee-900 text-xs uppercase tracking-wider">Instituição:</span><br/>Stone IP S.A.</div>
+                        </div>
                       </div>
                     </div>
 
