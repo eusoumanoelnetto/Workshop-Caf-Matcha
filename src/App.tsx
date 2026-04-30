@@ -114,9 +114,12 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="#registration" className="inline-flex items-center justify-center gap-2 bg-coffee-900 text-sand-50 px-8 py-4 rounded-full font-medium text-lg hover:bg-coffee-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto">
-              Quero minha vaga agora
-              <ChevronRight className="w-5 h-5" />
+            <a href="#registration" className="group relative inline-flex items-center justify-center gap-3 bg-coffee-900 border border-coffee-800 text-sand-50 px-8 py-4 rounded-full font-bold text-lg hover:bg-matcha-600 hover:border-matcha-500 hover:text-white transition-all duration-300 shadow-xl hover:shadow-[0_8px_30px_rgba(90,128,107,0.4)] transform hover:-translate-y-1 hover:scale-[1.02] active:scale-95 w-full sm:w-auto overflow-hidden">
+              <span className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-20 bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:translate-x-full transition-all duration-700 ease-out"></span>
+              <span className="relative flex items-center gap-2">
+                Quero minha vaga agora
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
             </a>
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
